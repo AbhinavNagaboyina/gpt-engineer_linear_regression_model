@@ -20,18 +20,18 @@ def main():
         scaler_df = S_scaler(cleaned_df)
         st.write(scaler_df.head())
         
-        st.subheader('Model Training')
-        target = str(st.text_input("Please enter the name of the target variable: "))
-        st.button("Generate")
+        st.sidebar.subheader('Model Training')
+        target = str(st.sidebar.text_input("Please enter the name of the target variable: "))
+        st.sidebar.button("Generate")
         if target:
             if target=="sales":
                 model = train_model(scaler_df)
-                st.subheader('Model Metrics')
+                st.sidebar.subheader('Model Metrics')
                 rmse, r2 = calculate_metrics(model, scaler_df)
-                st.write(f'RMSE: {rmse}')
-                st.write(f'R2: {r2}')
+                st.sidebar.write(f'RMSE: {rmse}')
+                st.sidebar.write(f'R2: {r2}')
             else:
-                st.write("ERROR VALUE FOR TARGET VARIABLE")
+                st.sidebar.write("ERROR VALUE FOR TARGET VARIABLE")
 
 if __name__ == "__main__":
     main()

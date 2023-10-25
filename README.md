@@ -6,7 +6,7 @@ Here are the files we will need:
 
 2. data_cleaning.py: This file will contain functions for cleaning the dataset.
 
-3. feature_engineering.py: This file will contain functions for feature engineering.
+3. scaling.py: This file will contain functions for scaling.
 
 4. model.py: This file will contain functions for training the regression model and calculating RMSE and R2.
 
